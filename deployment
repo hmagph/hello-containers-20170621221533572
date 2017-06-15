@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-containers
+    spec:
+      containers:
+      - name: hello-containers
+        image: hello-containers:latest
+        ports:
+        - containerPort: 80
